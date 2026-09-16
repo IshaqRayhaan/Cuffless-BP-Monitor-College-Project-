@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "you",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "fullBoot": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 100,
+      "left": -100,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -100,
+      "left": 150,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "chip-max30102",
+      "id": "chip1",
+      "top": 100,
+      "left": 150,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:32", "btn1:1.l", "black", [ "v0" ] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [ "v0" ] ],
+
+    [ "esp:21", "lcd1:SDA", "green", [ "v0" ] ],
+    [ "esp:22", "lcd1:SCL", "yellow", [ "v0" ] ],
+    [ "esp:5V", "lcd1:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.2", "lcd1:GND", "black", [ "v0" ] ],
+
+    [ "esp:21", "chip1:SDA", "green", [ "v0" ] ],
+    [ "esp:22", "chip1:SCL", "yellow", [ "v0" ] ],
+    [ "esp:3V3", "chip1:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.3", "chip1:GND", "black", [ "v0" ] ]
+  ],
+  "serialMonitor": {
+    "display": "terminal"
+  },
+  "dependencies": {}
+}

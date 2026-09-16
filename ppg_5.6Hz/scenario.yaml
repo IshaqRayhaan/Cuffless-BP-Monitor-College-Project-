@@ -1,0 +1,14 @@
+name: MAX30102 session test
+version: 1
+steps:
+  - delay: 5s
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 500ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 45s

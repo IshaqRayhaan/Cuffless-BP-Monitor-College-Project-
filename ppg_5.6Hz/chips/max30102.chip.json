@@ -1,0 +1,6 @@
+{
+  "name": "max30102",
+  "author": "you",
+  "pins": ["VCC", "GND", "SDA", "SCL", "INT"],
+  "controls": []
+}
