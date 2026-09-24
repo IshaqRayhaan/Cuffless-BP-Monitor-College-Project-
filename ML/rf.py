@@ -7,6 +7,7 @@ from mat73 import loadmat
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+from mat73 import loadmat
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -231,7 +232,7 @@ def prepare_ml_features(signals, features_dict, log_every=500):
 
         feats = extract_ppg_features(ppg)
         if 'Age' in features_dict: feats['age'] = features_dict['Age'][i]
-            if 'Gender' in features_dict:
+        if 'Gender' in features_dict:
                 g = features_dict['Gender'][i]
                 feats['gender'] = 1.0 if str(g).strip().upper() == 'M' else 0.0
         if 'BMI' in features_dict: feats['bmi'] = features_dict['BMI'][i]
